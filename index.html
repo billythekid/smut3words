@@ -20,6 +20,7 @@
   .leaflet-tooltip { font-family: "Source Sans Pro", sans-serif; font-size: 15px; }
   .leaflet-tooltip b { color: #f00; padding-right: 2px; font-size: 13px; }
   </style>
+  <script>const mapboxApiToken = "pk.eyJ1IjoiY293Ym95ZWNvc3NlIiwiYSI6ImNsczM2NjFlejBwMjIybW1xejkzMTdneXUifQ.3qfszv9QCRTxa231w2YoeA";</script>
 
 </head>
 <body>
@@ -74,7 +75,7 @@ const map = L.map('map', {worldCopyJump: true}).setView([51.505, -0.09], 13);
 const tooltipLayer = L.layerGroup().addTo(map);
 (async () => {
   map.locate({setView: true});
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2RyMDZuIiwiYSI6ImNrbzd3djlxczIwOGMyd2x5YXpxZWxjY20ifQ.rhKRoLKXjdlbwf6-nFoPFQ', {
+  L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxApiToken}`, {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
       'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
